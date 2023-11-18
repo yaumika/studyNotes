@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学习笔记</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+      a {
+        display: block;
+        text-decoration: none; /* 去除下划线 */
+        font-family: inherit; /* 继承父元素的字体样式 */
+        font-size: inherit; /* 继承父元素的字体大小 */
+        font-weight: inherit; /* 继承父元素的字体粗细 */
+        color: inherit; 
+        /* 其他继承父元素的字体样式属性 */
+      }
+      /* 未访问过的链接 */
+      a:link {
+      }
+      /* 访问过的链接 */
+      a:visited {
+        
+      }
+      /* 鼠标经过的链接 *****最常用***** */
+      a:hover {
+        color: #000;
+      }
+      /* 鼠标点击过的链接 */
+      a:active {
+      }
+      li {
+        display: block;
+      }
+      .baise {
+        background-color: aliceblue;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
+      .ce-shuxin {
+        width: 200px;
+        z-index: 1;
+      }
+      .mg8-r {
+        margin-right: 8px;
+      }
+      .mg8-rAndt {
+        margin-right: 8px;
+        margin-top: 8px;
+      }
+      .daohang {
+        flex: 1;
+        height: 90vh;
+      }
+      .daohang-element {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(222, 222, 222);
+        font-size: 14px;
+        color: #666;
+      }
+      .touxiang {
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #999;
+      }
+      .circular-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover; /* 调整图片显示方式 */
+      }
+      .mainarea {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+      .headarea {
+        height: 60px;
+        z-index: 1;
+        display: flex; /* 使用 flex 布局 */
+        align-items: center; /* 垂直居中 */
+        padding-left: 12px; /* 左边留出 10px 的距离 */
+      }
+      .contentarea {
+        overflow: auto;
+        display: flex;
+        flex: 1;
+      }
+      .left-con {
+        display: flex;
+        flex-direction: column;
+        flex: 3;
+      }
+      .right-con {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .dataarea {
+        display: flex;
+      }
+      .datablock {
+        flex: 1;
+        height: 100px;
+      }
+      .listarea {
+        display: flex;
+        flex-direction: column;
+      }
+      .listblock {
+        height: auto;
+        padding-left: 12px; /* 左边留出 10px 的距离 */
+        padding-bottom: 12px; /* 底部留出 10px 的距离 */
+      }
+      .floating-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999; /* 设置 z-index，确保按钮在其他元素上方 */
+      }
+      .gotop-button {
+        display: block;
+        padding: 12px;
+        background-color: #999;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      .img-inlist {
+        width: 500px; /* 设置宽度 */
+        display: block; /* 将图片设置为块级元素 */
+        margin: 0 auto; /* 自动居中 */
+      }
+      .textarea-list {
+        display: block;
+        width: 96%; /* 将文本框的宽度设置为父容器宽度的百分之百 */
+        box-sizing: border-box; /* 使用 border-box 盒模型，确保 padding 和 border 不会撑开宽度 */
+      }
+      @media (max-width: 600px) {
+        .ce-media {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body style="display: flex">
+    <!-- 侧边栏 -->
+    <div class="ce-shuxin ce-media">
+      <!-- 头像栏 -->
+      <div class="touxiang baise mg8-r">
+        <img src="images/avatar1.jpg" alt="avatar" class="circular-image" />
+        <div style="margin-left: 10px">澄澈</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="daohang baise mg8-r">
+        <div
+          style="font-weight: bold; font-size: large"
+          class="daohang-element"
+        >
+          导航栏
+        </div>
+        <div class="daohang-element"><a href="#qk">快捷键的使用</a></div>
+        <div class="daohang-element"><a href="#textlabel">文本类标签</a></div>
+        <div class="daohang-element"><a href="#boxlabel">盒子标签</a></div>
+        <div class="daohang-element"><a href="#superlink">超链接标签</a></div>
+        <div class="daohang-element"><a href="#specialchar">特殊字符</a></div>
+        <div class="daohang-element"><a href="#tablelabel">表格标签</a></div>
+        <div class="daohang-element"><a href="#listlabel">列表标签</a></div>
+        <div class="daohang-element"><a href="#formlabel">表单标签</a></div>
+      </div>
+    </div>
+    <!-- 主区域 -->
+    <div class="mainarea">
+      <!-- 头部栏 -->
+      <div class="headarea baise">
+        <h1 id="top">前端学习笔记实例</h1>
+      </div>
+      <!-- 内容栏 -->
+      <div class="contentarea">
+        <!-- 左区 -->
+        <div class="left-con">
+          <!-- 数据区 -->
+          <div id="dataarea" class="dataarea">
+            <!-- 数据块 -->
+            <div class="datablock baise mg8-rAndt"></div>
+            <div class="datablock baise mg8-rAndt"></div>
+            <div class="datablock baise mg8-rAndt"></div>
+            <div class="datablock baise mg8-rAndt"></div>
+          </div>
+          <!-- 列表区 -->
+          <div class="listarea">
+            <!-- 列表项 -->
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="qk">快捷键的使用</h3></div>
+              <div>
+                <div>writing code is interested.......</div>
+                <div>writing code is interested.......</div>
+                <div>writing code is interested.......</div>
+                <div>writing code is interested.......</div>
+                <div>writing code is interested.......</div>
+                <div>writing code is interested.......</div>
+              </div>
+              <div>
+                <p>shift + alt +'下箭头' 实现快速复制本行代码</p>
+                <p>ctrl + d 选择相同的多个单词</p>
+                <p>ctrl + alt + '下箭头' 选择多个光标</p>
+                <p>ctrl + h 查找并替换</p>
+                <p>ctrl + g 快速定位行</p>
+                <p>shift + alt 选择一定区块</p>
+                <p>ctrl + / 注释 或者 shift + alt + a</p>
+              </div>
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="textlabel">文本类标签</h3></div>
+              <div>
+                <p>
+                  p标签，段落标签，随着窗口自动维持段落
+                  <br />
+                  br标签，换行标签，强制换行，单标签，break
+                </p>
+                <p>
+                  <strong>加粗标签，strong</strong><b>或者使用b标签</b><br />
+                  <en>倾斜标签，en</en><i>或者使用i标签</i><br />
+                  <del>删除线标签，del标签</del><s>或者使用s标签</s><br />
+                  <ins>下划线标签，ins标签</ins><u>或者使用u标签</u><br />
+                </p>
+              </div>
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="boxlabel">盒子标签，用以布局</h3></div>
+              <div>div标签 是 division 分割</div>
+              <div>被div分割的版块会以上下结构分割</div>
+              <div>
+                <span>span标签 意思是跨度、跨距</span>
+                <span>可以看作是小盒子</span>
+                <span>可以横着左右布局</span>
+              </div>
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="img-label">图像标签</h3></div>
+              <p>img,src 是标签的必须属性</p>
+              <p>
+                src="/images/cat.jpg"<br />
+                alt="替换文本，在图片不显示时，显示此文本"<br />
+                title="提示文本，鼠标悬浮时显示"<br />
+                width="200"<br />
+                height="200"<br />
+                border="20"<br />
+                border-radius:10%
+              </p>
+              <img
+                src="/images/cat.jpg"
+                alt="替换文本，在图片不显示时，显示此文本"
+                title="提示文本，鼠标悬浮时显示"
+                width="200"
+                height="200"
+                border="20"
+                border-radius:10%
+              />
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="superlink">超链接标签</h3></div>
+              <div>
+                <div>使用a标签标识超链接</div>
+                <div>
+                  <a href="https://www.bilibili.com/" target="_self"
+                    >b站 _self 在当前页面跳转</a
+                  >
+                </div>
+                <div>
+                  <a href="https://www.bilibili.com/" target="_blank"
+                    >b站 _blank 在新窗口打开页面跳转</a
+                  >
+                </div>
+                <div>
+                  <span>内部连接</span>
+                  <span
+                    ><a href="index.html" target="_blank"
+                      >index _blank 在新窗口打开页面跳转</a
+                    ></span
+                  >
+                </div>
+                <div>
+                  <span>空连接</span>
+                  <span
+                    ><a href="#" target="_self"
+                      >index _blank 在新窗口打开页面跳转</a
+                    ></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="specialchar">特殊字符</h3></div>
+              <div>
+                <p>一些特殊的字符不能在网页显示，诸如：</p>
+                <p>
+                  空格:'&nbsp;'&amp;nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小于号:'&lt;'&amp;lt;
+                  &nbsp;&nbsp;&nbsp;&nbsp;大于号:'&gt;'&amp;gt;
+                </p>
+                <p>下面是一副特殊字符表，以供查阅</p>
+                <img
+                  src="/images/specialchar.jpg"
+                  alt="特殊字符表"
+                  title="特殊字符表"
+                  class="img-inlist"
+                />
+              </div>
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="tablelabel">表格标签</h3></div>
+              <div>
+                <p>
+                  <b>表格标签属性的各项作用，css内容</b><br />
+                  align="center" 表示表格主体居中<br />
+                  border="1" 表示边框<br />
+                  cellpadding="10" 表示内容与表格的距离 <br />
+                  cellspacing="0" 表格与表格之间的距离<br />
+                  width="500" height="500" 定义其宽与高
+                </p>
+                <p>
+                  <b>表头与表格主体</b> <br />
+                  thead 标识表头，内容加粗并且居中<br />
+                  tbody
+                  标识主体，内容正常显示，主要区分与表头，将数据内容与类型区分
+                </p>
+              </div>
+              <div>
+                <table
+                  align="center"
+                  border="1"
+                  cellpadding="10"
+                  cellspacing="0"
+                  width="500"
+                  height="500"
+                >
+                  <thead>
+                    <tr>
+                      <th>特殊字符</th>
+                      <th>描述</th>
+                      <th>字符的代码</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>'&nbsp;'</td>
+                      <td>空格符</td>
+                      <td>'&amp;nbsp;'</td>
+                    </tr>
+                    <tr>
+                      <td>'&lt;'</td>
+                      <td>小于号</td>
+                      <td>'&amp;lt;'</td>
+                    </tr>
+                    <tr>
+                      <td>'&gt;'</td>
+                      <td>大于号</td>
+                      <td>'&amp;gt;'</td>
+                    </tr>
+                    <tr>
+                      <td>'&amp;'</td>
+                      <td>和号</td>
+                      <td>'&amp;amp;'</td>
+                    </tr>
+                    <tr>
+                      <td>'&yen;'</td>
+                      <td>人民币</td>
+                      <td>'&amp;yen;'</td>
+                    </tr>
+                    <tr>
+                      <td><b>合并单元格</b></td>
+                      <td colspan="2">
+                        colspan合并单元格<br />colum纵向，列合并
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">
+                        rowspan合并单元格<br />row横向的，行合并
+                      </td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="listlabel">列表标签</h3></div>
+              <div>
+                <ul>
+                  <li>&lt;ul&gt;标签内只能嵌套&lt;li&gt;</li>
+                  <li>&lt;li&gt;标签内可以嵌套其他标签</li>
+                  <li><p>&lt;p&gt;标签</p></li>
+                  <li>无序列表</li>
+                </ul>
+              </div>
+              <div>
+                <ol>
+                  <li>&lt;ol&gt;如上无序列表只能嵌套&lt;li&gt;</li>
+                  <li>&lt;li&gt;标签内可以嵌套其他标签</li>
+                  <li>使用了数字进行排列</li>
+                  <li>有序标签</li>
+                </ol>
+              </div>
+              <div>
+                <dl>
+                  <dt>&lt;dl&gt;只能嵌套&lt;dt&gt;&lt;dd&gt;</dt>
+                  <dd>&lt;dt&gt;标签标识与&lt;dd&gt;区分</dd>
+                  <dd>&lt;dd&gt;标签与&lt;dt&gt;标签同级</dd>
+                  <dd>自定义列表</dd>
+                  <dd>&lt;dt&gt;&lt;dd&gt;标签内可以嵌套其他标签</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="formlabel">表单标签</h3></div>
+              <div>
+                <p>使用场景：收集信息，注册页面等</p>
+                <ol>
+                  <li><p>表单域 form</p></li>
+                  <li><p>表单控件 input、label、select、textarea</p></li>
+                  <li><p>提示信息 属性中value和placeholder</p></li>
+                </ol>
+
+                <form action="demo.php" method="get" name="name">
+                  <ul>
+                    <li>
+                      <label for="username">注册用户名：</label
+                      ><input
+                        type="text"
+                        name="username"
+                        value=""
+                        placeholder="输入用户名"
+                        id="username"
+                      />
+                    </li>
+                    <li>
+                      <label for="password">设定密码 ： </label>
+                      <input
+                        type="password"
+                        name="password"
+                        value=""
+                        placeholder="输入登录密码"
+                        id="password"
+                      />
+                    </li>
+                    <li>
+                      <p>单选按钮，选择你的性别</p>
+                      <label for="man">男</label
+                      ><input
+                        type="radio"
+                        name="sex"
+                        value="男"
+                        id="man"
+                        checked="checked"
+                      />
+                      <label for="woman">女</label
+                      ><input
+                        type="radio"
+                        name="sex"
+                        value="女"
+                        id="woman"
+                      /><br />
+                    </li>
+                    <li>
+                      <p>多选按钮：</p>
+                      <label for="smoke">抽烟 </label>
+                      <input type="checkbox" name="choose" id="smoke" />
+                      <label for="drink">喝酒 </label>
+                      <input type="checkbox" name="choose" id="drink" />
+                      <label for="perm">烫头 </label>
+                      <input type="checkbox" name="choose" id="perm" />
+                    </li>
+                    <li>
+                      <div>下拉表单</div>
+                      <select name="region" id="">
+                        <option value="1">北京</option>
+                        <option value="2">上海</option>
+                        <option value="3">天津</option>
+                        <option value="4">甘肃</option>
+                      </select>
+                    </li>
+                    <li>
+                      <textarea
+                        name=""
+                        id=""
+                        cols="30"
+                        rows="10"
+                        class="textarea-list"
+                      ></textarea>
+                    </li>
+                    <li>
+                      <input type="submit" value="sign up" />
+                      <input type="reset" value="重置" />
+                    </li>
+                    <li>
+                      <!-- 结合JS功能使用 -->
+                      <input type="button" value="按钮" />
+                      <input type="file" value="上传文件" />
+                      <input type="date" /><br />
+                    </li>
+                    <!-- 隐藏<input type="hid" name="hpwd" value="远程代码" /><br />
+        隐藏<input type="image" name="hpwd" value="远程代码" /><br /> -->
+                    <li>
+                      <img
+                        src="/images/type.png"
+                        alt="type"
+                        class="img-inlist"
+                      />
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="">css-字体属性</h3></div>
+              <p>设置字体使用 font 系列的</p>
+              <!-- <p style="fort-family = Microsoft YaHei;">设置字体使用 font 系列的</p> -->
+              <p>font</p>
+            </div>
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="">待添加</h3></div>
+            </div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div class="right-con">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baise mg8-rAndt"></div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="baise mg8-rAndt"></div>
+          <div class="floating-container">
+            <a class="gotop-button" href="#dataarea"><b>Top</b> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
