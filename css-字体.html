@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css-字体</title>
+    <style>
+      .pic-container {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .pic img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 50%;
+      }
+
+      .content-container {
+        max-width: 700px;
+        margin: 30px auto;
+      }
+
+      .footer {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 40px;
+      }
+      /* 以下为字体学习笔记css演示 */
+      .user-family {
+        color: red;
+        /* font-family: 'Microsoft YaHei'; */
+        /* font-family: 'Times New Roman', Times, serif; */
+      }
+      user-size {
+        color: black;
+        /* font-size: large; */
+        font-size: 40px;
+      }
+      .user-bold {
+        color: red;
+        font-weight: 700;
+        /* 实际开发需要使用数字进行编辑字体粗细 */
+        /* 400 == normal   700 == bold */
+        /* normal 可以将默认加粗的字体取消加粗 */
+      }
+      .user-normal {
+        color: red;
+        font-weight: normal;
+      }
+      .user-style {
+        color: black;
+        font-style: italic;
+        /* 变为倾斜 */
+        /* font-style: normal; */
+        /* 将倾斜的字体恢复 */
+      }
+      .user-unstyle {
+        color: black;
+        /* font-style: italic; */
+        /* 变为倾斜 */
+        font-style: normal;
+        /* 将倾斜的字体恢复 */
+      }
+      .usre-font {
+        color: red;
+        /* font-style: italic;
+        font-weight: 700;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif; */
+        /* 复合上述代码 */
+        /* font: font-style font-weight font-size/line-height 和 font-family; */
+        /* 顺序必须遵循上述的顺序 */
+        /* 必须含有 font-size/line-height 和 font-family两个属性 否则不起作用*/
+        font: italic 700 20px "Times New Roman", Times, serif;
+      }
+      .user-align-center {
+        text-align: center;
+      }
+      .user-align-right {
+        text-align: right;
+      }
+      .user-align-left {
+        text-align: left;
+      }
+      .user-line-through {
+        text-decoration: line-through;
+      }
+      .user-overline {
+        text-decoration: overline;
+      }
+      .user-underline {
+        text-decoration: underline;
+      }
+      a {
+        text-decoration: none;
+      }
+      .user-indent p {
+        /* 首行缩进2个字符的大小 */
+        text-indent: 2em;
+        /* 或者指定缩进大小 */
+        /* text-indent: 20px; */
+        /* 也可以使用缩进负值，使每段首行向左移动 */
+      }
+      .user-line-height {
+        line-height: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pic-container">
+      <div class="pic">
+        <img src="https://i.postimg.cc/5N1GxxGn/avatar1.jpg" alt="个人头像" />
+      </div>
+      <div class="name">
+        <h1>Yaumika</h1>
+      </div>
+    </div>
+    <!-- 正文内容 -->
+    <div class="content-container">
+      <div><h2 id="">css-字体属性</h2></div>
+      <!-- text-align 文本位置 -->
+      <div>
+        <h4>text-align 文本位置</h4>
+        <p class="user-align-center">text-align 文本对齐，居中</p>
+        <p class="user-align-right">user-align:right; 右对齐</p>
+        <p class="user-align-left">
+          user-align:left; 左对齐，文本一般默认左对齐
+        </p>
+      </div>
+      <br />
+      <!-- text-decoration 文本装饰 -->
+      <div>
+        <h4>text-decoration 文本装饰</h4>
+        <p class="user-overline">text-decoration: overline; 上划线</p>
+        <p class="user-underline">text-decoration: underline; 下划线</p>
+        <p class="user-line-through">text-decoration: line-through; 删除线</p>
+        <a href="#">text-decoration: none; 一般使用在链接标签，去除下划线</a>
+      </div>
+      <br />
+      <!-- text-indent :文本缩进 -->
+      <div class="user-indent">
+        <h4>text-indent :文本缩进</h4>
+        <p>首行缩进2个字符的大小 text-indent: 2em;</p>
+        <p>或者指定缩进大小 text-indent: 20px;</p>
+        <p>也可以使用缩进负值，使每段首行向左移动</p>
+      </div>
+      <br />
+      <!-- line-height 定义行间距 -->
+      <div class="user-line-height">
+        <h4>line-height 定义行间距</h4>
+        <p>测量屏幕内的像素值：FSCapture</p>
+        <img src="images/line-height.png" alt="" height="200px" />
+      </div>
+      <!-- font 系列 设置字体 -->
+      <div>
+        <h4>设置字体使用 font 系列的</h4>
+        <!-- <p style="fort-family = Microsoft YaHei;">设置字体使用 font 系列的</p> -->
+        <div class="user-family">
+          <p>font-family 可以添加多种字体，以防单一字体不兼容</p>
+          <p>font-family: 'Times New Roman', Times, serif;</p>
+          <p>多种字体，优先使用最前面的单一句font时</p>
+        </div>
+        <div class="user-size">
+          <p>font-size 可以改变字体大小</p>
+          <p>font-size: 20px;</p>
+          <p>谷歌浏览器默认字体大小为16px</p>
+          <p>标题的字体一般优先使用默认字体大小 如果要改变需要指定修改</p>
+        </div>
+        <div class="user-bold">
+          <p>font-weight 字体的粗细、</p>
+          <p>font-weight: 700 或 font-weight: bold</p>
+          <p>实际开发需要使用数字进行编辑字体粗细 400 == normal 700 == bold</p>
+          <p>normal 可以将默认加粗的字体取消加粗</p>
+          <h4 class="user-normal">此处为一个h4标签，但是经过了normal处理</h4>
+        </div>
+        <div class="user-style">
+          <p>font-style 改变字体的风格</p>
+          <p>font-style: italic;将字体变为倾斜状态</p>
+          <p class="user-unstyle">
+            font-style: normal;将字体从倾斜状态变为正常
+          </p>
+        </div>
+        <div class="usre-font">
+          <p>复合字体属性</p>
+          <p>font-style: italic;</p>
+          <p>font-weight: 700;</p>
+          <p>font-size: 20px;</p>
+          <p>font-family: 'Times New Roman', Times, serif;</p>
+          <p>可以复合上述代码为一句：</p>
+          <p>font: italic 700 20px "Times New Roman", Times, serif;</p>
+          <p>
+            顺序必须遵循顺序 font: font-style font-weight font-size/line-height
+            和 font-family;
+          </p>
+          <p>
+            必须含有 font-size/line-height 和 font-family两个属性 否则不起作用
+          </p>
+        </div>
+      </div>
+      <br />
+      <!-- color 颜色 -->
+      <div>
+        <h4>color 颜色的三种表现形式：</h4>
+        <p style="color: red">预置颜色：red blue green pink</p>
+        <p style="color: #fff000">十六进制表示：#fff000</p>
+        <p style="color: rgb(255, 0, 255)">
+          rgb即三原色red green blue：(255,0,255)
+        </p>
+        <p>rgba 三原色之外 a表示透明度</p>
+      </div>
+      <br />
+      <!-- css的三种引入方式 -->
+      <div>
+        <h4>css的三种引入方式</h4>
+        <b> 内部样式表：</b>
+        <p>即当前页面的最前面的style标签内的内容</p>
+        <p>单独控制一个页面</p>
+        <b>行内样式表:</b>
+        <p>即在标签内写 style="" 添加属性</p>
+        <p>仅可控制当前的标签</p>
+        <b>外部样式表:</b>
+        <p>单独写一个外部样式的表，.css结尾</p>
+        <p>使用link标签引入css文件</p>
+        <p>&lt;link rel="stylesheet" href="css文件路径"&gt;</p>
+        <p>可以控制多个页面</p>
+      </div>
+    </div>
+    <div></div>
+    <div></div>
+
+    <div class="footer">
+      <p>
+        我的
+        <a href="https://space.bilibili.com/629007074">bilibili账号</a
+        >:@想了半天零一天
+      </p>
+      <p>我的邮箱：gaoyusena@163.com</p>
+    </div>
+  </body>
+</html>
