@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css-emmet</title>
+    <link rel="stylesheet" href="css-emmet.css">
+  </head>
+  <body>
+    <div>
+      <!-- 精确控制背景图片位置 -->
+      <div class="transparent">
+        <!-- 五个气泡 -->
+        <div class="nav">
+          <a href="#" class="bg1">五个气泡</a>
+          <a href="#" class="bg2">五个气泡</a>
+          <a href="#" class="bg3">五个气泡</a>
+          <a href="#" class="bg4">五个气泡</a>
+          <a href="#" class="bg5">五个气泡</a>
+        </div>
+      </div>
+
+      <div class="transparent">
+        <div class="con-pic"><h3>成长守护平台</h3></div>
+        <div class="qky-text">快速文字居中——纵向</div>
+      </div>
+
+      <div class="transparent center-1">
+        <div class="pic-txt"></div>
+      </div>
+
+      <div class="transparent">
+        <h2>复合选择器</h2>
+        <div class="parent">
+          <h1>.parent下的h1</h1>
+          <p>这是一个段落。</p>
+          <span>这是一个span盒子。</span>
+          <ul>
+            <li>列表项1</li>
+            <li>
+              <h1>在ul中的li下的h1</h1>
+            </li>
+            <li><span>这是一个在li标签下的span盒子。</span></li>
+          </ul>
+          <h2>伪类例子</h2>
+          <ol>
+            <li><a href="#">链接伪类</a></li>
+            <li>focus伪类</li>
+            <li><input type="text" /></li>
+            <li><input type="text" /></li>
+            <li><input type="text" /></li>
+          </ol>
+        </div>
+        <div class="chose-houdai">
+          <b>后代选择器</b>
+          <div>ol li{}</div>
+          <div>元素1 元素2 {样式声明}</div>
+          <div>选择ol 标签内的所有li标签</div>
+          <br />
+        </div>
+        <div class="chose-zi">
+          <b>子选择器</b>
+          <div>.parent>h1{}</div>
+          <div>元素1>元素2 {样式声明}</div>
+          <div>选择class为parent标签内下一级的h1标签</div>
+          <br />
+        </div>
+        <div class="chose-binji">
+          <b>并集选择器</b>
+          <div>span,p{}</div>
+          <div>元素1,元素2 {样式声明}</div>
+          <div>可以选择多组标签</div>
+          <br />
+        </div>
+        <div class="chose-weilei">
+          <b>伪类选择器</b>
+          <div>a{}</div>
+          <div>a:link {样式声明}</div>
+          <div>选择ol 标签内的所有li标签</div>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div class="transparent">
+      <div class="quk">
+        <p>使用: div*3 按tab键即可产生三个div标签</p>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <p>使用: ul>li 按tab键即可产生ul与li的上下级标签</p>
+
+        <p>使用: span+div 产生同级标签</p>
+        <span></span>
+        <div></div>
+
+        <p>使用: div.demo 快速添加class="demo"属性</p>
+        <div class="demo"></div>
+
+        <p>使用: div.demo>div#two>span#one>p.demo*5</p>
+        <div class="demo">
+          <div id="two">
+            <span id="one">
+              <p class="demo1"></p>
+              <p class="demo2"></p>
+              <p class="demo3"></p>
+              <p class="demo4"></p>
+              <p class="demo5"></p>
+            </span>
+          </div>
+        </div>
+
+        <p>使用: div{$}*5 产生内部数字序号，{$}表示序号产生的位置</p>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    </div>
+  </body>
+</html>
