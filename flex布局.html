@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex布局-导航数据左右分布</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+      .baise {
+        background-color: aliceblue;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
+      .ce-shuxin {
+        width: 200px;
+        z-index: 1;
+      }
+      .mg8-r {
+        margin-right: 8px;
+      }
+      .mg8-rAndt {
+        margin-right: 8px;
+        margin-top: 8px;
+      }
+      .daohang {
+        flex: 1;
+        height: 90vh;
+      }
+      .daohang-element {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(222, 222, 222);
+        font-size: 14px;
+        color: #666;
+      }
+      .touxiang {
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #999;
+      }
+      .mainarea {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+      .headarea {
+        height: 60px;
+        z-index: 1;
+      }
+      .contentarea {
+        overflow: auto;
+        display: flex;
+        flex: 1;
+      }
+      .left-con {
+        display: flex;
+        flex-direction: column;
+        flex: 3;
+      }
+      .right-con {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .dataarea {
+        display: flex;
+      }
+      .datablock {
+        flex: 1;
+        height: 100px;
+      }
+      .listarea {
+        display: flex;
+        flex-direction: column;
+      }
+      .listblock {
+        height: 160px;
+      }
+      @media (max-width: 600px) {
+        .ce-media {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body style="display: flex">
+    <!-- 侧边栏 -->
+    <div class="ce-shuxin ce-media">
+      <!-- 头像栏 -->
+      <div class="touxiang baise mg8-r">
+        <img src="" alt="" width="40px" height="40px" />
+        <div style="margin-left: 10px">想了半天零一天</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="daohang baise mg8-r">
+        <div class="daohang-element">导航栏</div>
+        <div class="daohang-element">导航栏</div>
+        <div class="daohang-element">导航栏</div>
+        <div class="daohang-element">导航栏</div>
+        <div class="daohang-element">导航栏</div>
+      </div>
+    </div>
+    <!-- 主区域 -->
+    <div class="mainarea">
+      <!-- 头部栏 -->
+      <div class="headarea baise"></div>
+      <!-- 内容栏 -->
+      <div class="contentarea">
+        <!-- 左区 -->
+        <div class="left-con">
+          <!-- 数据区 -->
+          <div class="dataarea">
+            <!-- 数据块 -->
+            <div class="datablock baise mg8-rAndt"></div>
+            <div class="datablock baise mg8-rAndt"></div>
+            <div class="datablock baise mg8-rAndt"></div>
+            <div class="datablock baise mg8-rAndt"></div>
+          </div>
+          <!-- 列表区 -->
+          <div class="listarea">
+            <!-- 列表项 -->
+            <div class="listblock baise mg8-rAndt"></div>
+            <div class="listblock baise mg8-rAndt"></div>
+            <div class="listblock baise mg8-rAndt"></div>
+            <div class="listblock baise mg8-rAndt"></div>
+            <div class="listblock baise mg8-rAndt"></div>
+            <div class="listblock baise mg8-rAndt"></div>
+            <div class="listblock baise mg8-rAndt"></div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div class="right-con">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baise mg8-rAndt"></div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="baise mg8-rAndt"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

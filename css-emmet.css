@@ -1,0 +1,159 @@
+ .one {
+        /* 使用快速的简写即可快速找到需要的指令，按tab选择 */
+        /* ti2em */
+        text-indent: 2em;
+        /* w2px */
+        width: 2px;
+        /* h34px */
+        height: 34px;
+      }
+      li {
+        color: green;
+      }
+      /* 未访问过的链接 */
+      a:link {
+        color: green;
+      }
+      /* 访问过的链接 */
+      a:visited {
+        color: aqua;
+      }
+      /* 鼠标经过的链接 *****最常用***** */
+      a:hover {
+        color: antiquewhite;
+      }
+      /* 鼠标点击时的链接 */
+      a:active {
+        color: brown;
+      }
+      /* 上述顺序很重要 LVHA*/
+
+      /* 选择获得光标的表单元素 */
+      input:focus {
+        background-color: yellow;
+      }
+      .qky-text {
+        width: 200px;
+        height: 40px;
+        background-color: bisque;
+        line-height: 40px;
+      }
+      .pic-txt {
+        width: 400px;
+        height: 400px;
+        line-height: 400px;
+        background-color: transparent;
+        background-size: cover; /* 使背景图片充满整个元素 */
+        /* 一般盒子默认 透明 transparent */
+        background-image: url(images/avatar1.jpg);
+        /* 默认 平铺图片铺满模块  以下属性分别为：平铺 不平铺 向x轴平铺 向y轴平铺*/
+        /* background-repeat:repeat | no-repeat | repeat-x | repeat-y ; */
+        background-repeat: no-repeat;
+        /* 背景图片位置  */
+        background-position: center top;
+        /* 如果只指定一个参数 另一个参数默认为居中 */
+      }
+      h3 {
+        width: 118px;
+        height: 48px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 48px;
+        text-indent: 2em;
+        background-color: antiquewhite;
+        background-image: url(images/icon-left.jpg);
+        background-repeat: no-repeat;
+        background-position: center left;
+      }
+      body {
+        background-image: url(images/avatar.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        /* 默认为滚动的 background-attachment: scroll; */
+        background-attachment: fixed;
+      }
+      .con-pic {
+        width: 432px;
+        height: 432px;
+        background-color: aquamarine;
+        background-image: url(images/avatar-48.jpg);
+        background-position: 20px center;
+        /* 参数为混合单位  */
+        background-repeat: repeat;
+      }
+      /* 背景附着 ： 背景图片 视差滚动  */
+      /* 背景属性复合写法：
+      
+      */
+      .beijinfuhe {
+        /* background: 背景颜色 背景图片地址 背景平铺 背景滚动 背景图片位置 */
+        background: transparent url() repeat-x fixed top;
+      }
+      /* 背景颜色半透明 */
+      .transparent {
+        border: 2em;
+        margin: auto;
+        width: 720px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+      }
+      /* 五个气泡样式 */
+      .nav a {
+        margin-left: 80px;
+        display: block;
+        width: 300px;
+        height: 120px;
+        background-color: antiquewhite;
+        text-align: center;
+        line-height: 120px;
+        text-decoration: none;
+        color: black;
+        font-size: large;
+        font-weight: 700;
+      }
+      .nav .bg1 {
+        background: url(images/qipao.png) no-repeat;
+      }
+      .nav .bg2 {
+        background: url(images/people.png) no-repeat;
+      }
+      .nav .bg2:hover {
+        background: url(images/people-good.png) no-repeat;
+      }
+      .nav .bg3 {
+        background: url(images/thumb.png) no-repeat;
+      }
+      .nav .bg4 {
+        background: url(images/吹牛ing.png) no-repeat;
+      }
+      .nav .bg5 {
+        background: url(images/border-300-120.png) no-repeat;
+      }
+
+      .chose-weilei {
+        color: aqua;
+      }
+      .chose-binji {
+        color: antiquewhite;
+      }
+      .parent span,
+      .parent p,
+      .quk {
+        color: antiquewhite;
+      }
+      .chose-zi {
+        color: brown;
+      }
+      .parent > h1 {
+        color: brown;
+      }
+      .chose-houdai {
+        color: black;
+      }
+      .parent ul li {
+        color: black;
+      }
+      .center-1 {
+        display: flex;
+        justify-content: center; /* 水平居中 */
+      }

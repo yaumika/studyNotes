@@ -5,158 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>学习笔记</title>
-    <style>
-      body {
-        margin: 0;
-        height: 100vh;
-        background-color: #eee;
-      }
-      a {
-        display: block;
-        text-decoration: none; /* 去除下划线 */
-        font-family: inherit; /* 继承父元素的字体样式 */
-        font-size: inherit; /* 继承父元素的字体大小 */
-        font-weight: inherit; /* 继承父元素的字体粗细 */
-        color: inherit;
-        /* 其他继承父元素的字体样式属性 */
-      }
-      /* 未访问过的链接 */
-      a:link {
-      }
-      /* 访问过的链接 */
-      a:visited {
-      }
-      /* 鼠标经过的链接 *****最常用***** */
-      a:hover {
-        color: #000;
-      }
-      /* 鼠标点击过的链接 */
-      a:active {
-      }
-      li {
-        display: block;
-      }
-      .baise {
-        background-color: aliceblue;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-      }
-      .ce-shuxin {
-        width: 200px;
-        z-index: 1;
-      }
-      .mg8-r {
-        margin-right: 8px;
-      }
-      .mg8-rAndt {
-        margin-right: 8px;
-        margin-top: 8px;
-      }
-      .daohang {
-        flex: 1;
-        height: 90vh;
-      }
-      .daohang-element {
-        padding: 10px 20px;
-        border-bottom: 1px solid rgb(222, 222, 222);
-        font-size: 14px;
-        color: #666;
-      }
-      .touxiang {
-        display: flex;
-        padding: 10px;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 1px solid #999;
-      }
-      .circular-image {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover; /* 调整图片显示方式 */
-      }
-      .mainarea {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-      }
-      .headarea {
-        height: 60px;
-        z-index: 1;
-        display: flex; /* 使用 flex 布局 */
-        align-items: center; /* 垂直居中 */
-        padding-left: 12px; /* 左边留出 10px 的距离 */
-      }
-      .contentarea {
-        overflow: auto;
-        display: flex;
-        flex: 1;
-      }
-      .left-con {
-        display: flex;
-        flex-direction: column;
-        flex: 3;
-      }
-      .right-con {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-      }
-      .dataarea {
-        display: flex;
-      }
-      .datablock {
-        flex: 1;
-        height: 100px;
-      }
-      .listarea {
-        display: flex;
-        flex-direction: column;
-      }
-      .listblock {
-        height: auto;
-        padding-left: 12px; /* 左边留出 10px 的距离 */
-        padding-bottom: 12px; /* 底部留出 10px 的距离 */
-      }
-      .floating-container {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 9999; /* 设置 z-index，确保按钮在其他元素上方 */
-      }
-      .gotop-button {
-        display: block;
-        padding: 12px;
-        background-color: #999;
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      }
-      .img-inlist {
-        width: 500px; /* 设置宽度 */
-        display: block; /* 将图片设置为块级元素 */
-        margin: 0 auto; /* 自动居中 */
-      }
-      .textarea-list {
-        display: block;
-        width: 96%; /* 将文本框的宽度设置为父容器宽度的百分之百 */
-        box-sizing: border-box; /* 使用 border-box 盒模型，确保 padding 和 border 不会撑开宽度 */
-      }
-      @media (max-width: 600px) {
-        .ce-media {
-          display: none;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="studyNotes.css" />
   </head>
   <body style="display: flex">
     <!-- 侧边栏 -->
     <div class="ce-shuxin ce-media">
       <!-- 头像栏 -->
       <div class="touxiang baise mg8-r">
-        <img src="https://i.postimg.cc/5N1GxxGn/avatar1.jpg" alt="avatar" class="circular-image" />
+        <img
+          src="https://i.postimg.cc/5N1GxxGn/avatar1.jpg"
+          alt="avatar"
+          class="circular-image"
+        />
         <div style="margin-left: 10px">澄澈</div>
       </div>
       <!-- 导航栏 -->
@@ -176,6 +36,7 @@
         <div class="daohang-element"><a href="#listlabel">列表标签</a></div>
         <div class="daohang-element"><a href="#formlabel">表单标签</a></div>
         <div class="daohang-element"><a href="#css-font">CSS-字体属性</a></div>
+        <div class="daohang-element"><a href="#emmet">emmet&选择器</a></div>
       </div>
     </div>
     <!-- 主区域 -->
@@ -282,7 +143,6 @@
                     <a
                       href="https://www.bilibili.com/video/BV1hY411j7UM/"
                       target="_self"
-                      style="display: inline; color: blue"
                       >康文昌网页入门学习</a
                     >设置target为"_self"
                   </p>
@@ -290,30 +150,29 @@
                 <div>
                   <p>
                     在新窗口打开页面跳转:b站
-                    <a
-                      href="https://www.bilibili.com/"
-                      target="_blank"
-                      style="display: inline; color: blue"
+                    <a href="https://www.bilibili.com/" target="_blank"
                       >b站 _blank </a
                     >设置target为"_blank"
                   </p>
                 </div>
                 <div>
-                  <p>内部连接：href值为“flex布局.html”，打开当前目录下的<a
-                    href="flex布局.html"
-                    target="_blank"
-                    style="display: inline; color: blue"
-                    >flex页面</a
-                  ></p> 
-                  <p>PS:此页面为学习康文昌视频内的模板</p>
+                  <p>
+                    内部连接：href值为“flex布局.html”，打开当前目录下的<a
+                      href="flex布局.html"
+                      target="_blank"
+                      >flex页面</a
+                    >
+                  </p>
+                  <p>PS:此页面为学习的模板</p>
                 </div>
                 <div>
-                  <p>空连接:href值为“#”，不会进行跳转与报错<a
+                  <p>
+                    空连接:href值为“#”，不会进行跳转与报错<a
                       href="#"
                       target="_self"
-                      style="display: inline; color: blue"
                       >链接处</a
-                    ></p>
+                    >
+                  </p>
                 </div>
               </div>
             </div>
@@ -551,14 +410,20 @@
             <div class="listblock baise mg8-rAndt">
               <div><h3 id="css-font">css-字体属性</h3></div>
               <p>
-                点击<a
-                  href="./css-字体.html" target="_blank"
-                  style="display: inline; color: blue"
-                  >CSS-字体属性</a
+                点击<a href="./css-字体.html" target="_blank">CSS-字体属性</a
                 >链接查看页面
               </p>
               <!-- <p style="fort-family = Microsoft YaHei;">设置字体使用 font 系列的</p> -->
             </div>
+            <!-- emmet 快捷创建 -->
+            <div class="listblock baise mg8-rAndt">
+              <div><h3 id="emmet">选择器&emmet</h3></div>
+              <p>
+                点击<a href="./css-emmet.html" target="_blank">css-emmet</a
+                >链接查看页面
+              </p>
+            </div>
+            <!-- emment 快捷创建 -->
             <div class="listblock baise mg8-rAndt">
               <div><h3 id="">待添加</h3></div>
             </div>
